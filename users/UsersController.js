@@ -25,6 +25,7 @@ router.post("/users/create", (req, res) => {
             var hash = bcrypt.hashSync(password, salt);
             
             User.create({
+                nome: nome,
                 email: email,
                 password: hash
             }).then(() => {
